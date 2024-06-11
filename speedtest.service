@@ -1,0 +1,7 @@
+[Unit]
+Description="Speedtest"
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/ace/speed.py
