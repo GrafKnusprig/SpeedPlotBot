@@ -5,7 +5,7 @@ import argparse
 import os
 
 
-def plot_data_from_csv(file_path, last_n=None):
+def plot_data_from_csv(file_path, last_n=None, output_file=None):
     # Read the CSV file
     try:
         data = pd.read_csv(file_path, sep=";", parse_dates=["Date"])
@@ -61,13 +61,19 @@ def plot_data_from_csv(file_path, last_n=None):
     plt.gcf().autofmt_xdate()  # Rotate date labels
 
     plt.tight_layout()
-    plt.show()
+
+    # Save the plot to a file if specified
+    if output_file:
+        plt.savefig(output_file)
+    else:
+        plt.show()
 
 
 def main():
     parser = argparse.ArgumentParser(description="Plot data from a CSV file.")
     parser.add_argument("csv_file", nargs="?", help="Path to the CSV file")
     parser.add_argument("--last_n", type=int, help="Number of last data points to plot")
+    parser.add_argument("--output_file", help="Path to save the plot image")
 
     args = parser.parse_args()
 
@@ -76,7 +82,7 @@ def main():
     else:
         file_path = input("Please enter the path to the CSV file: ")
 
-    plot_data_from_csv(file_path, args.last_n)
+    plot_data_from_csv(file_path, args.last_n, args.output_file)
 
 
 if __name__ == "__main__":

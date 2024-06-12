@@ -1,3 +1,4 @@
 credentials.py
-*.csv
-*.txt
+speedtest_log.csv
+speedtest_log.txt
+speedtest_plot.png
