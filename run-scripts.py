@@ -28,3 +28,4 @@ if __name__ == "__main__":
         "./speedtest_plot.png",
     ]
     run_script("standalone-chart-plotter.py", plotter_args)
+    run_script("calculate-deviation.py")
