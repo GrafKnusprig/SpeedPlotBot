@@ -26,6 +26,7 @@ if __name__ == "__main__":
         f"{int(60/10*24)}",
         "--output_file",
         "./speedtest_plot.png",
+        "-m",  # Modern plot style
     ]
     run_script("standalone-chart-plotter.py", plotter_args)
     run_script("calculate-deviation.py")
