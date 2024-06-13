@@ -26,7 +26,19 @@ if __name__ == "__main__":
         f"{int(60/10*24)}",
         "--output_file",
         "./speedtest_plot.png",
-        "-m",  # Modern plot style
+        "--modern",  # Modern plot style
     ]
     run_script("standalone-chart-plotter.py", plotter_args)
-    run_script("calculate-deviation.py")
+
+    deviation_args = [
+        "--file_path",
+        "./speedtest_log.csv",
+        "--fixed_download_value",
+        "50.0",
+        "--fixed_upload_value",
+        "20.0",
+        "--last_n",
+        f"{int(60/10*24)}",
+        "--integral",
+    ]
+    run_script("calculate-deviation.py", deviation_args)
