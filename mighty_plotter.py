@@ -76,7 +76,7 @@ def plot_data_from_csv(
         data = data[data["Date"] >= cutoff_time]
     if modern:
         setup_modern_plot()
-    marker = "o"
+    marker = ""  # removed the marker
     color_download = "r"
     color_upload = "b"
     color_hline = "#000000"
