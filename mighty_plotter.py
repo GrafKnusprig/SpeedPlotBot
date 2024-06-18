@@ -108,8 +108,8 @@ def plot_data_from_csv(
     for y in y_range:
         plt.axhline(y=y, color=color_hline, linestyle=":", alpha=alpha_hline)
     plt.title("Network Performance Over Time")
-    plt.xlabel("Date")
-    plt.ylabel("Value")
+    plt.xlabel("Date and Time")
+    plt.ylabel("Speed in Mbps")
     plt.legend()
     plt.gca().xaxis.set_major_formatter(mdates.DateFormatter("%d.%m.%y %H:%M"))
     plt.gca().xaxis.set_major_locator(mdates.AutoDateLocator())
