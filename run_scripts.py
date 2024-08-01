@@ -33,11 +33,11 @@ if __name__ == "__main__":
     plotter_args = [
         "./speedtest_log.csv",
         "--last_duration",
-        "4d",
+        "1d",
         "--output_file",
         "./speedtest_plot.png",
         "--modern",
-        "--integral",
+        # "--integral",
         "--fixed_download_value",
         "50.0",
         "--fixed_upload_value",
